@@ -12,8 +12,8 @@ REST_hanlp是一个RESTful风格的nlp框架，这里提供了项目的开源地
 
 3. Controller.java文件。在该文件中主要实现了三个接口，两个是文本分类的接口（一个GET方法，一个POST方法），还有一个文本推荐的接口（GET方法）：
 ```
-textClassifyControllerPost(HttpServletRequest request,String text)、
-TextClassifyControllerGet(HttpServletRequest request, @PathVariable(value = "text") String text)
+textClassifyControllerPost(HttpServletRequest request,String text,String accessToken)、
+TextClassifyControllerGet(HttpServletRequest request, @PathVariable(value = "text") String text,@PathVariable(value="accessToken") String accessToken)
 TextSuggestController(@PathVariable(value="keyword") String keyword)。
 ```
 其中在文本分类的两个接口中除了获得参数文本之外，还将请求报文的内容在控制台显示出来，而文本推荐的接口（它所需要的参数是一个关键字）虽然已经实现，但是在内网服务器上运行的时候是将这一部分注释掉了。
