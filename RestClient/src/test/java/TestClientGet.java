@@ -12,7 +12,7 @@ class TestClientGet {
     private static final Logger logger = Logger.getLogger(TestClientGet.class.getName());
     private static final String path = System.getProperty("user.dir")+"\\src\\test\\java\\ClientGet.log";
     /**
-     * get请求
+     * get请求,可以参考post请求，这里不再详细介绍
      */
     @Test()
     void restTemplateGetTest() throws IOException {
