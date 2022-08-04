@@ -1,0 +1,22 @@
+8月 04, 2022 2:38:30 下午 TestClientPost rtPostObject
+信息: Start Writing to File..
+8月 04, 2022 2:38:30 下午 TestClientPost rtPostObject
+信息: Response Headers:
+200 OK
+Content-Type:[application/json]
+Transfer-Encoding:[chunked]
+Date:[Thu, 04 Aug 2022 06:38:29 GMT]
+Keep-Alive:[timeout=60]
+Connection:[keep-alive]
+response
+{
+        "first-type":自然灾害
+        "first-type-possibility":0.5150102670400402
+        "second-type":社会安全
+        "second-type-possibility":0.31874777274988375
+        "third-type":安全生产
+        "third-type-possibility":0.15649498411552745
+}
+
+8月 04, 2022 2:38:30 下午 TestClientPost rtPostObject
+信息: Write Successfuly.

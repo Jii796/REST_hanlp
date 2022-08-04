@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: TestClientGetSuggester
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in TestClientGetSuggester
+restTemplateGetTest  Time elapsed: 0.001 s  <<< ERROR!
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/textSuggest/%E6%A3%AE%E6%9E%97%E5%A4%A7%E7%81%AB": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at TestClientGetSuggester.restTemplateGetTest(ClientGetSuggester.java:17)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at TestClientGetSuggester.restTemplateGetTest(ClientGetSuggester.java:17)
+
