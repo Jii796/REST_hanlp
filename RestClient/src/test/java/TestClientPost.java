@@ -33,20 +33,17 @@ public class TestClientPost {
 
         FileHandler fileHandler = new FileHandler(path);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://172.18.8.43:18101/textClassify";
-        String url2="http://localhost:8080/textClassify";
-        String url3="http://119.3.24.91:80/textClassify";
-        String url4="http://192.168.0.165:8080/textClassify";
+        String url="http://localhost:8080/textClassify";
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept-Language","zh");
         String request="森林火情";
         MultiValueMap map = new LinkedMultiValueMap();
         map.add("text",request);
-        map.add("accessToken","TEXTCLASSIFYFORHANLP");
+        map.add("accessToken","YOURTOKEN");
 
-        assertNotNull(restTemplate.postForEntity(url3, map, String.class));
-        ResponseEntity<String> responseEntity = restTemplate.postForEntity(url3, map, String.class);
-        fileHandler.setFormatter(new SimpleFormatter());//官设格式
+        assertNotNull(restTemplate.postForEntity(url, map, String.class));
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, map, String.class);
+        fileHandler.setFormatter(new SimpleFormatter());
 
         logger.addHandler(fileHandler);
 
