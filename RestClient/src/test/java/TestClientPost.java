@@ -95,38 +95,4 @@ public class TestClientPost {
         }
         return "null";
     }
-    public static String getContext(String path){
-        List<String> list = new ArrayList<String>();
-        try
-        {
-            String encoding = "utf-8";
-            File file = new File(path);
-            if (file.isFile() && file.exists())
-            { // 判断文件是否存在
-                InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file), encoding);// 考虑到编码格式
-                BufferedReader bufferedReader = new BufferedReader(read);
-                String lineTxt = null;
-
-                while ((lineTxt = bufferedReader.readLine()) != null)
-                {
-                    list.add(lineTxt);
-                }
-                bufferedReader.close();
-                read.close();
-            }
-            else
-            {
-                logger.info("找不到指定的文件");
-            }
-        }
-        catch (Exception e)
-        {
-            logger.info("读取文件内容出错");
-            e.printStackTrace();
-        }
-
-        String result=list.toString();
-        return result;
-    }
 }
