@@ -108,3 +108,14 @@ http://ip:port/textClassify/安全生产/YOURTOKEN
         "third-type-possibility":0.05242666784309736
 }
 ```
+#### 错误示例
+POST请求：
+```
+http://ip:port/textClssify?text=安全生产&accessToken=UNKNOWNTOKEN
+```
+#### 输出示例
+```
+{
+        "Token":error
+}
+```
