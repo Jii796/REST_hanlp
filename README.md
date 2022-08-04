@@ -25,115 +25,11 @@ TextSuggestController(@PathVariable(value="keyword") String keyword)。
 
 1. jar文件。该仓库下面包含了三个jar文件，分别是hanlp-1.8.3-sources.jar、hanlp-1.8.3.jar和hanlp-1.8.3.jar.original。其中将jar文件本地运行的时候，需要将这三个文件全部都下载下来，否则会导致部分数据下载缺失。初次运行通过以下命令`java -jar hanlp-1.8.3.jar`，在第一次运行的时候会下载相应的字典文件和模型文件和训练数据，这个会花费大约五到十分钟左右的时间。
 
-2. 模拟客户端（java）。该客户端是通过RESTTemplate编写，是一个maven项目，其中主要代码在src/test/java文件夹下。包含ClientGet.java和ClientPost.java两个文件，分别模拟GET请求和POST请求，注意，在本地模拟的时候需要将相应的URL地址修改为本地地址。
+2. 模拟客户端（java）。该客户端是通过RESTTemplate编写，是一个maven项目，其中主要代码在src/test/java文件夹下。包含TestClientGet.java和TestClientPost.java两个文件，分别模拟GET请求和POST请求，注意，在本地模拟的时候需要将相应的URL地址修改为本地地址。
 
 #### 接口的调用
-其中文本分类的接口可以通过GET方式调用，也可以通过POST方式调用，但是建议通过POST方式，调用代码如下所示：
+其中文本分类的接口可以通过GET方式调用，也可以通过POST方式调用，但是建议通过POST方式，调用代码参考TestClientPost.java文件。
 
-```
-public class ClientPost {
-
-    public static final String[] type= {"first-type","second-type","third-type","forth-type","fifth-type","sixth-type"};
-
-    public static final String[] type_prossibility= {"first-type-prossibility","second-type-prossibility","third-type-prossibility",
-            "forth-type-prossibility","fifth-type-prossibility","sixth-type-prossibility"};
-
-    @Test
-    public void rtPostObject() throws JSONException, UnsupportedEncodingException {
-
-        RestTemplate restTemplate = new RestTemplate();
-        String url = "http://172.18.8.43:18101/textClassify";
-        String url2="http://localhost:8080/textClassify";
-        HttpHeaders headers = new HttpHeaders();
-        //headers.add("Content-Type","application/json");
-        headers.add("Accept-Language","zh");
-        //headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-        String request="东川区应急管理局截至目前未接到安全生产类和自然灾害类的情况报告。";
-        System.out.println(request);
-        MultiValueMap map = new LinkedMultiValueMap();
-        map.add("text",request);
-
-        ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, map, String.class);
-
-        getResponseHeaders(responseEntity);
-    }
-    public static void getResponseHeaders(ResponseEntity<String> responseEntity) throws JSONException {
-        System.out.println("Response Headers:");
-        System.out.println(responseEntity.getStatusCode());
-        System.out.println("Content-Type:"+responseEntity.getHeaders().get("Content-Type"));
-        System.out.println("Transfer-Encoding:"+responseEntity.getHeaders().get("Transfer-Encoding"));
-        System.out.println("Date:"+responseEntity.getHeaders().get("Date"));
-        System.out.println("Keep-Alive:"+responseEntity.getHeaders().get("Keep-Alive"));
-        System.out.println("Connection:"+responseEntity.getHeaders().get("Connection"));
-        String result=responseEntity.getBody();
-        JSONObject json=new JSONObject(result);
-        System.out.println("{");
-        for(int i=0;i<6;i++){
-            if(json.has(type[i])){
-                System.out.println("        \""+type[i]+"\":"+IntToString((String) json.get(type[i])));
-                System.out.println("        \""+type_prossibility[i]+"\":"+json.get(type_prossibility[i]));
-            }
-        }
-        System.out.println("}");
-    }
-
-    public static String IntToString(String label){
-        switch(label){
-            case "0001":
-                return "安全生产";
-            case "0002":
-                return "社会安全";
-            case "0003":
-                return "自然灾害";
-            case "0004":
-                return "公共卫生";
-            case "0005":
-                return "通知";
-            case "0006":
-                return "其他";
-        }
-        return "null";
-    }
-    public static String getContext(String path){
-        List<String> list = new ArrayList<String>();
-        try
-        {
-            String encoding = "utf-8";
-            File file = new File(path);
-            if (file.isFile() && file.exists())
-            { // 判断文件是否存在
-                InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file), encoding);// 考虑到编码格式
-                BufferedReader bufferedReader = new BufferedReader(read);
-                String lineTxt = null;
-
-                while ((lineTxt = bufferedReader.readLine()) != null)
-                {
-                    list.add(lineTxt);
-                }
-                bufferedReader.close();
-                read.close();
-            }
-            else
-            {
-                System.out.println("找不到指定的文件");
-            }
-        }
-        catch (Exception e)
-        {
-            System.out.println("读取文件内容出错");
-            e.printStackTrace();
-        }
-
-        String result=list.toString();
-        return result;
-    }
-}
-
-```
-
-- 执行成功之后输出文本分类的结果以及响应报文的内容，其中 > http://172.18.8.43:18101/textClassify 是公司内网服务器的地址。
-- 如果想要通过外网使用该服务，这时候的URL地址为：http://119.3.24.91:80/textClassify 。 这是华为云服务器提供的服务，使用期到2022年9月2日。
 
 ### 如何更新服务
 #### 本地项目
@@ -154,7 +50,7 @@ java -jar hanlp-1.8.3.jar
 - 如果需要更改内网服务器上面的服务，步骤和上面相同，但是打包文件之后，只需要替换服务器中的“hanlp-1.8.3.jar”文件即可，其他文件不需要任何修改。
 ### 服务接口文档
 #### 接口描述
-- 接口请求URL：http:172.18.8.43:18101/textClassify。
+- 接口请求URL：http:127.0.0.1:8080/textClassify。
 - 文本分类接口能够对用户输入的文本进行自动分类，将其映射到具体的类目上，用户只需要提供待分类的文本，而无需关注具体的实现。通过对文本内容进行分析、处理、归纳和推理，识别出文本可能的具体业务类型（可能是一种，也可能是多种），并且提供该类型的概率。在这里业务类型一共包含六种，分别为安全生产、社会安全、自然灾害、公共卫生、通知、其他。
 #### 请求参数
 |参数名称| 必选 | 类型 | 描述 |
@@ -165,7 +61,7 @@ java -jar hanlp-1.8.3.jar
 | 参数名称 | 类型 | 描述 |
 |---|---|---|
 | type | String | 这是文本分类的结果类型 |
-| type_prossibility | String | 类型的概率，是将一个double类型的变量转换而成 |
+| type_possibility | String | 类型的概率，是将一个double类型的变量转换而成 |
 
 - 注意这里的type输出的内容并不是“安全生产”等字样，而是“0001/0002/0003/0004/0005/0006”这几种字样，其中具体映射为“0001：安全生产、0002：社会安全、0003：自然灾害、0004：公共卫生、0005：通知、0006：其他”，需要在客户端进行转换。
 - 其中type的可能值
@@ -175,27 +71,27 @@ java -jar hanlp-1.8.3.jar
 - type_prossibility的可能值
 
 ```
-    public static final String[] type_prossibility= {"first-type-prossibility","second-type-prossibility","third-type-prossibility",
-            "forth-type-prossibility","fifth-type-prossibility","sixth-type-prossibility"};
+    public static final String[] type_possibility= {"first-type-possibility","second-type-possibility","third-type-possibility",
+            "forth-type-possibility","fifth-type-possibility","sixth-type-possibility"};
 ```
 
 #### 输入示例
 POST请求：
 ```
-http://172.18.8.43:18101/textClssify?text=安全生产
+http://ip:port/textClssify?text=安全生产&accessToken=YOURTOKEN
 ```
 GET请求
 ```
-http://172.18.8.43:18101/textClassify/安全生产
+http://ip:port/textClassify/安全生产/YOURTOKEN
 ```
 #### 输出示例
 输出结果（未做任何调整）
 ```
 {
         "second-type":"0003",
-        "second-type-prossibility":"0.3138506888148521",
-        "third-type-prossibility":"0.05242666784309736",
-        "first-type-prossibility":"0.6260985632103986",
+        "second-type-possibility":"0.3138506888148521",
+        "third-type-possibility":"0.05242666784309736",
+        "first-type-possibility":"0.6260985632103986",
         "third-type":"0004",
         "first-type":"0001"
 }
@@ -205,10 +101,10 @@ http://172.18.8.43:18101/textClassify/安全生产
 ```
 {
         "first-type":安全生产
-        "first-type-prossibility":0.6260985632103986
+        "first-type-possibility":0.6260985632103986
         "second-type":自然灾害
-        "second-type-prossibility":0.3138506888148521
+        "second-type-possibility":0.3138506888148521
         "third-type":公共卫生
-        "third-type-prossibility":0.05242666784309736
+        "third-type-possibility":0.05242666784309736
 }
 ```
