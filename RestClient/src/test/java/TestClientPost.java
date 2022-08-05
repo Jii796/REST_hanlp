@@ -1,7 +1,6 @@
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -34,10 +33,8 @@ public class TestClientPost {
         FileHandler fileHandler = new FileHandler(path);
         RestTemplate restTemplate = new RestTemplate();
         String url="http://localhost:8080/textClassify";
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Accept-Language","zh");
         String request="森林火情";
-        MultiValueMap map = new LinkedMultiValueMap();
+        MultiValueMap<String,String> map = new LinkedMultiValueMap<>();
         map.add("text",request);
         map.add("accessToken","YOURTOKEN");
 
@@ -52,9 +49,9 @@ public class TestClientPost {
         logger.info("Write Successfuly.");
     }
     public static String getResponseHeaders(ResponseEntity<String> responseEntity) throws JSONException {
-        String ResponseHeaders = new String();
+        String ResponseHeaders = "";
         ResponseHeaders=ResponseHeaders.concat("Response Headers:\n");
-        ResponseHeaders=ResponseHeaders.concat(String.valueOf(responseEntity.getStatusCode())+"\n");
+        ResponseHeaders=ResponseHeaders.concat(responseEntity.getStatusCode()+"\n");
         ResponseHeaders=ResponseHeaders.concat("Content-Type:"+responseEntity.getHeaders().get("Content-Type")+"\n");
         ResponseHeaders=ResponseHeaders.concat("Transfer-Encoding:"+responseEntity.getHeaders().get("Transfer-Encoding")+"\n");
         ResponseHeaders=ResponseHeaders.concat("Date:"+responseEntity.getHeaders().get("Date")+"\n");
