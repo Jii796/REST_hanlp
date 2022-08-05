@@ -68,7 +68,7 @@ java -jar hanlp-1.8.3.jar
 ```
     public static final String[] type= {"first-type","second-type","third-type","forth-type","fifth-type","sixth-type"};
 ```
-- type_prossibility的可能值
+- type_possibility的可能值
 
 ```
     public static final String[] type_possibility= {"first-type-possibility","second-type-possibility","third-type-possibility",
