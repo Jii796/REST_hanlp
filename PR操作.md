@@ -3,7 +3,7 @@
 - 具体步骤如下：
 1. 在文件夹下右键，选择“Git Bash Here”，进入如下页面;
 
-![Git Bash Here](https://github.com/Jii796/REST_hanlp/raw/main/picture/mmexport1659959448233.png)
+![Git Bash Here](https://github.com/Jii796/REST_hanlp/blob/main/picture/mmexport1659959448233.png)
 ![Git Bash Here](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/GitBashHere.png)
 ![Git Bash Here](https://user-images.githubusercontent.com/83084341/183377169-b955dc02-8bc6-4369-a0ed-6eea7e18b230.png)
 
