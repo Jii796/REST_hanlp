@@ -19,7 +19,7 @@ cd hanlp
 ```
 git init
 ```
-![初始化本地仓库](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/initlocal.png)
+![初始化本地仓库](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/pic/InitLocal2.png)
 ![初始化本地仓库](https://user-images.githubusercontent.com/83084341/183377221-f646f1f2-7c8d-4ed6-86ff-a78b95f1bb4d.png)
 4. 拉取远程仓库，这里没有直接使用clone，而是使用的如下命令。
 
@@ -34,12 +34,12 @@ git remote add origin 你的仓库地址
 ```
  git pull origin master
 ```
-![拉取远程分支](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/InitLocal.png)
+![拉取远程分支](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/pic/RemotePull2.png)
 ![拉取远程分支](https://user-images.githubusercontent.com/83084341/183377406-a61f2822-b8f4-4f4c-b7b5-e161b272b50a.png)
 这个时候再次查看文件夹hanlp里面的内容，可以发现多出了上图文件夹内所示的内容：
 
 5. 在这里通过`git branch`命令，查看当前分支，发现只有一个main分支，为了防止本地修改的时候出现文件丢失，可以新创建一个分支，比如新建一个名称为mergy的分支
-![新建本地分支](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/newlocalbranch.png)
+![新建本地分支](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/pic/NewBranch2.png)
 ![新建本地分支](https://user-images.githubusercontent.com/83084341/183377726-a2496be9-755c-4c08-9892-dc69ff03a41c.png)
 
 ```
@@ -48,7 +48,7 @@ git checkout -b mergy
 在这里试着新建一个文本文件“新建文本文档.txt”
 然后通过`git add .`、`git commit -m "你的提交信息"`提交本地修改至仓库。
 在这里也可以通过`git add . `，`git commit`进行提交，该git commit命令将调用文本编辑器。输入modified my info第一行，其余内容保持不变。保存并退出编辑器，这就完成了本次提交。
-![本地提交修改](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/pic/CommitLocal.png)
+![本地提交修改](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/pic/CommitLocal2.png)
 ![本地提交修改](https://user-images.githubusercontent.com/83084341/183378004-071fa2b7-ebbb-4bc3-992a-eda7930048fc.png)
 之后通过
 ```
