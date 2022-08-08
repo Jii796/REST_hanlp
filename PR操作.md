@@ -66,7 +66,7 @@ git push -u origin mergy
 8. 打开github查看仓库的内容，查看仓库的所有分支，发现多了一个mergy分支。表示你已经成功将本地内容提交至远程仓库。
 然后点击上方的“Compare & pull requests”
 
-![查看远程仓库内容](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/viewRemote.png)
+![查看远程仓库内容](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/pic/RemoteView.png)
 ![查看远程仓库内容](https://user-images.githubusercontent.com/83084341/183378313-db51442c-4bde-4b42-ad1e-80579029d39a.png)
 开始创建一个新的Pull Requests,可以参照如下的图片顺序。
 
