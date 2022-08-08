@@ -56,14 +56,15 @@ git checkout main
 ```
 git push -u origin mergy
 ```
-![屏幕截图(12)](https://user-images.githubusercontent.com/83084341/183378313-db51442c-4bde-4b42-ad1e-80579029d39a.png)
 
-8. 打开github查看仓库的内容，查看仓库的所有分支，发现多了一个mergy分支。然后，点击上方的“create&pull requests”按钮，开始创建一个Pull Request。
-创建成功之后，可以查看两个分支之间的差异。
+8. 打开github查看仓库的内容，查看仓库的所有分支，发现多了一个mergy分支。表示你已经成功将本地内容提交至远程仓库。
+然后点击上方的“Compare & pull requests”
+![屏幕截图(12)](https://user-images.githubusercontent.com/83084341/183378313-db51442c-4bde-4b42-ad1e-80579029d39a.png)
+开始创建一个新的Pull Requests,可以参照如下的图片顺序。
 ![屏幕截图(13)](https://user-images.githubusercontent.com/83084341/183378545-dc3dde41-7107-42aa-8eec-701fc811d1d8.png)
 
 ![屏幕截图(14)](https://user-images.githubusercontent.com/83084341/183378573-bd48d2cc-5213-42d1-bdd0-be6959788e85.png)
 
 ![屏幕截图(15)](https://user-images.githubusercontent.com/83084341/183378620-c6aad0ee-6f1e-4bb1-8bc4-c4edb1d2ff7f.png)
-
+最后，可以直接观察到修改前后的文件变化。
 ![屏幕截图(16)](https://user-images.githubusercontent.com/83084341/183378675-94cd87d9-082e-4511-ba69-a591eaaee2d0.png)
