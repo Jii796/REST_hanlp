@@ -2,7 +2,7 @@
 - 前提工作：已经下载好Git
 - 具体步骤如下：
 1. 在文件夹下右键，选择“Git Bash Here”，进入如下页面;
-![Git Bash Here](https://gitee.com/jiangjiahui666/jiangjiahui/blob/master/picture/GitBashHere.png)
+![Git Bash Here](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/GitBashHere.png)
 ![Git Bash Here](https://user-images.githubusercontent.com/83084341/183377169-b955dc02-8bc6-4369-a0ed-6eea7e18b230.png)
 
 2. 之后，可以选择创建一个新的文件夹“hanlp”,然后进入该文件夹。
