@@ -4,7 +4,6 @@
 1. 在文件夹下右键，选择“Git Bash Here”，进入如下页面;
 
 
-![Git Bash Here](https://github.com/Jii796/REST_hanlp/raw/main/picture/mmexport1659959448233.png)
 ![Git Bash Here](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/GitBashHere.png)
 ![Git Bash Here](https://user-images.githubusercontent.com/83084341/183377169-b955dc02-8bc6-4369-a0ed-6eea7e18b230.png)
 
@@ -35,7 +34,7 @@ git remote add origin 你的仓库地址
 ```
  git pull origin master
 ```
-![拉取远程分支](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/pullremote.png)
+![拉取远程分支](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/initlocal.png)
 ![拉取远程分支](https://user-images.githubusercontent.com/83084341/183377406-a61f2822-b8f4-4f4c-b7b5-e161b272b50a.png)
 这个时候再次查看文件夹hanlp里面的内容，可以发现多出了上图文件夹内所示的内容：
 
