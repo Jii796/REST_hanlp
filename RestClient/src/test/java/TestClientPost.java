@@ -46,7 +46,7 @@ public class TestClientPost {
 
         logger.log(Level.INFO,"Start Writing to File..");
         logger.info(getResponseHeaders(responseEntity));
-        logger.info("Write Successfuly.");
+        logger.info("Write Successfully.");
     }
     public static String getResponseHeaders(ResponseEntity<String> responseEntity) throws JSONException {
         String ResponseHeaders = "";
@@ -76,20 +76,14 @@ public class TestClientPost {
     }
 
     public static String IntToString(String label){
-        switch(label){
-            case "0001":
-                return "安全生产";
-            case "0002":
-                return "社会安全";
-            case "0003":
-                return "自然灾害";
-            case "0004":
-                return "公共卫生";
-            case "0005":
-                return "通知";
-            case "0006":
-                return "其他";
-        }
-        return "null";
+        return switch (label) {
+            case "0001" -> "安全生产";
+            case "0002" -> "社会安全";
+            case "0003" -> "自然灾害";
+            case "0004" -> "公共卫生";
+            case "0005" -> "通知";
+            case "0006" -> "其他";
+            default -> "null";
+        };
     }
 }
