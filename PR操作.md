@@ -48,7 +48,7 @@ git checkout -b mergy
 在这里试着新建一个文本文件“新建文本文档.txt”
 然后通过`git add .`、`git commit -m "你的提交信息"`提交本地修改至仓库。
 在这里也可以通过`git add . `，`git commit`进行提交，该git commit命令将调用文本编辑器。输入modified my info第一行，其余内容保持不变。保存并退出编辑器，这就完成了本次提交。
-![本地提交修改](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/picture/localcommit.png)
+![本地提交修改](https://gitee.com/jiangjiahui666/jiangjiahui/raw/master/pic/CommitLocal.png)
 ![本地提交修改](https://user-images.githubusercontent.com/83084341/183378004-071fa2b7-ebbb-4bc3-992a-eda7930048fc.png)
 之后通过
 ```
