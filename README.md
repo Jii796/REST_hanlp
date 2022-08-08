@@ -1,6 +1,7 @@
 # REST_hanlp
 ### 模型的生成以及使用
 REST_hanlp是一个RESTful风格的nlp框架，这里提供了项目的开源地址以及打包好的jar文件地址。
+![Git Bash Here](https://github.com/Jii796/REST_hanlp/raw/main/picture/mmexport1659959448233.png)
 #### 项目工程介绍
 - 该项目的源码在仓库[https://github.com/Jii796/Spring_hanlp.git](https://github.com/Jii796/Spring_hanlp.git)下，其中该仓库包含两个项目文件分别为Hanlp-1.8.3和REST_hanlp。其中前一个项目是Spring MVC框架和nlp框架的融合（是一个WEB项目），后一个项目是RESTful风格的nlp框架（是一个maven项目）。
 - JDK版本要求：1.8（注意：其他版本的JDK也可能可以执行，但是会出现一些警告错误）
